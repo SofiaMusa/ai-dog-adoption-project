@@ -2,9 +2,11 @@
 
 ## Descrizione del progetto
 
-L'obiettivo del progetto è sviluppare un sistema intelligente in grado di supportare il processo di adozione dei cani attraverso l'utilizzo di tecniche di Intelligenza Artificiale. Il sistema analizza le caratteristiche degli animali disponibili per l'adozione e stima la probabilità con cui un cane verrà adottato, fornendo informazioni utili a rifugi, associazioni e potenziali adottanti.
+L'obiettivo del progetto è sviluppare un sistema intelligente di supporto alle adozioni canine basato su tecniche di Intelligenza Artificiale. Il sistema è progettato per assistere rifugi, associazioni e potenziali adottanti sia nella valutazione dell'adottabilità dei cani sia nell'individuazione degli animali più compatibili con le caratteristiche e le preferenze di una specifica famiglia.
 
-Il progetto si basa sul dataset **PetFinder Adoption Prediction**, contenente informazioni relative a migliaia di animali domestici. In questo lavoro l'analisi è stata limitata ai soli cani, utilizzando sia dati strutturati (età, sesso, taglia, stato di salute, vaccinazioni, numero di fotografie, ecc.) sia descrizioni testuali degli annunci di adozione.
+Il progetto utilizza il dataset **PetFinder Adoption Prediction**, contenente informazioni relative a migliaia di animali domestici. In questo lavoro l'analisi è stata limitata ai soli cani e ha sfruttato sia dati strutturati (età, sesso, taglia, stato di salute, vaccinazioni, numero di fotografie, ecc.) sia descrizioni testuali degli annunci di adozione.
+
+Oltre alla previsione della velocità di adozione, il progetto propone un prototipo di sistema di matching cane-famiglia basato sulla combinazione di regole di compatibilità e analisi semantica delle descrizioni testuali.
 
 ## Obiettivi
 
@@ -15,7 +17,8 @@ Gli obiettivi principali del progetto sono:
 * prevedere la classe di adozione di un cane tramite modelli di Machine Learning;
 * sfruttare tecniche di Natural Language Processing per analizzare le descrizioni testuali degli annunci;
 * confrontare approcci differenti e valutarne le prestazioni;
-* gettare le basi per un futuro sistema di raccomandazione in grado di suggerire i cani più adatti a una famiglia.
+* progettare un sistema di matching tra cane e famiglia adottante;
+* generare una classifica dei cani maggiormente compatibili con le preferenze espresse dagli adottanti.
 
 ## Dataset e Preprocessing
 
@@ -37,15 +40,43 @@ Sono inoltre state analizzate le relazioni tra le diverse caratteristiche e la v
 
 ### Random Forest
 
-È stato sviluppato un modello Random Forest basato esclusivamente sulle caratteristiche strutturate del dataset. L'analisi delle feature importance ha evidenziato che la lunghezza della descrizione, l'età del cane e il numero di fotografie rappresentano alcune delle informazioni più rilevanti per la previsione.
+È stato sviluppato un modello Random Forest basato esclusivamente sulle caratteristiche strutturate del dataset. Il modello migliore ha raggiunto un'accuracy di circa **40.93%**.
+
+L'analisi delle feature importance ha evidenziato che la lunghezza della descrizione, l'età del cane e il numero di fotografie rappresentano alcune delle informazioni più rilevanti per la previsione.
 
 ### Modello NLP basato su BERT
 
 Per sfruttare le informazioni contenute nelle descrizioni testuali è stato utilizzato il modello pre-addestrato **BERT (Bidirectional Encoder Representations from Transformers)**. Le descrizioni sono state trasformate in embedding numerici e utilizzate per addestrare un classificatore dedicato.
 
+Il modello basato esclusivamente sulle informazioni testuali ha ottenuto un'accuracy di circa **33.07%**.
+
 ### Confronto dei modelli
 
 Le prestazioni dei modelli sono state confrontate per valutare il contributo delle informazioni strutturate e testuali alla previsione della velocità di adozione.
+
+I risultati mostrano che le caratteristiche strutturate rappresentano la fonte informativa più efficace, mentre le descrizioni testuali forniscono informazioni complementari utili a comprendere il profilo dell'animale.
+
+## Sistema di Matching Cane–Famiglia
+
+Per avvicinare il progetto a un reale sistema di supporto alle adozioni è stato progettato un modulo dedicato agli adottanti.
+
+La famiglia compila un questionario contenente informazioni riguardanti:
+
+* età del richiedente;
+* presenza di bambini;
+* esperienza con i cani;
+* tipologia di abitazione;
+* disponibilità di un giardino;
+* preferenze relative a sesso, età, taglia e lunghezza del pelo del cane;
+* tempo disponibile per la cura dell'animale;
+* descrizione testuale del cane ideale.
+
+Il sistema calcola quindi uno score di compatibilità utilizzando:
+
+* regole di matching tra preferenze della famiglia e caratteristiche del cane;
+* similarità semantica tra la descrizione del cane ideale e la descrizione dell'annuncio, calcolata tramite BERT.
+
+I cani vengono infine ordinati in una classifica che evidenzia gli animali maggiormente compatibili con il profilo dell'adottante.
 
 ## Aspetti di Intelligenza Artificiale
 
@@ -54,10 +85,11 @@ Il progetto integra diversi ambiti dell'Intelligenza Artificiale:
 * Machine Learning supervisionato per la previsione della velocità di adozione;
 * Natural Language Processing (NLP) per l'analisi automatica delle descrizioni testuali;
 * Feature Engineering per la costruzione di nuove variabili informative;
+* Recommendation Systems per la generazione di classifiche personalizzate;
 * Analisi comparativa di modelli differenti.
 
 ## Innovatività
 
-La maggior parte dei portali di adozione consente solamente di consultare gli annunci e applicare semplici filtri di ricerca. Il sistema proposto mira invece a sfruttare tecniche di Intelligenza Artificiale per comprendere quali caratteristiche rendono un cane più facilmente adottabile e per supportare il processo decisionale.
+La maggior parte dei portali di adozione consente esclusivamente di consultare gli annunci e applicare semplici filtri di ricerca. Il sistema proposto mira invece a supportare attivamente il processo decisionale sfruttando tecniche di Intelligenza Artificiale.
 
-L'approccio combina informazioni strutturate e descrizioni testuali, permettendo di analizzare non solo le caratteristiche fisiche dell'animale, ma anche il modo in cui viene presentato nell'annuncio. I risultati ottenuti potranno costituire la base per futuri sistemi di raccomandazione personalizzata capaci di migliorare l'incontro tra cani e famiglie adottanti.
+L'approccio combina dati strutturati, descrizioni testuali e informazioni fornite dagli adottanti per costruire un sistema di matching cane-famiglia. In questo modo il progetto non si limita a stimare la probabilità di adozione di un animale, ma fornisce uno strumento in grado di suggerire gli abbinamenti potenzialmente più adatti, contribuendo a rendere le adozioni più consapevoli e sostenibili nel lungo periodo.
