@@ -12,6 +12,7 @@
         "preferred_fur": "short",
         "daily_time": "2-4",
         "activity_level": "moderate",
+        "preferred_breeds": ["Labrador Retriever", "Golden Retriever"],
         "ideal_dog_description": "We are looking for a small, affectionate and friendly dog suitable for a family with children. The dog should be calm at home, sociable, easy to manage and suitable for apartment life."
     },
     "single_active_person": {
@@ -27,6 +28,7 @@
         "preferred_fur": "indifferent",
         "daily_time": ">4",
         "activity_level": "active",
+        "preferred_breeds": ["Rottweiler"],
         "ideal_dog_description": "I am looking for an energetic, playful and sociable dog. The dog can be medium sized, active outdoors and suitable for walks, play and training."
     },
     "senior_applicant": {
@@ -42,6 +44,7 @@
         "preferred_fur": "short",
         "daily_time": "1-2",
         "activity_level": "calm",
+        "preferred_breeds": [],
         "ideal_dog_description": "I am looking for a calm, gentle and affectionate adult dog. The dog should be quiet, easy to manage, not too energetic and suitable for apartment life."
     },
     "experienced_countryside_family": {
@@ -57,6 +60,7 @@
         "preferred_fur": "indifferent",
         "daily_time": ">4",
         "activity_level": "active",
+        "preferred_breeds": [],
         "ideal_dog_description": "We are looking for a loyal, active and affectionate dog suitable for a family with outdoor space. The dog can be large, energetic and used to spending time outside."
     },
     "first_time_adopter": {
@@ -72,6 +76,7 @@
         "preferred_fur": "short",
         "daily_time": "1-2",
         "activity_level": "calm",
+        "preferred_breeds": ["Beagle", "Cocker Spaniel"],
         "ideal_dog_description": "I am looking for a calm, friendly and easy-going dog for a first adoption. The dog should be small, affectionate, not too demanding and suitable for a beginner."
     }
 }
