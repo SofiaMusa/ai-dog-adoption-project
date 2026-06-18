@@ -78,5 +78,74 @@
         "activity_level": "calm",
         "preferred_breeds": ["Beagle", "Cocker Spaniel"],
         "ideal_dog_description": "I am looking for a calm, friendly and easy-going dog for a first adoption. The dog should be small, affectionate, not too demanding and suitable for a beginner."
-    }
+    },
+    "active_family_medium_dog": {
+        "profile_name": "Famiglia attiva con giardino",
+        "applicant_age": "31-60",
+        "children": true,
+        "dog_experience": "some",
+        "housing": "house",
+        "garden": true,
+        "preferred_gender": "indifferent",
+        "preferred_age": "young",
+        "preferred_size": "medium",
+        "preferred_fur": "medium",
+        "preferred_breeds": ["Border Collie", "Siberian Husky"],
+        "daily_time": ">4",
+        "activity_level": "active",
+        "ideal_dog_description": "We are looking for an intelligent, energetic and friendly dog that enjoys outdoor activities and spending time with children."
+        },
+    "experienced_large_dog_owner": {
+        "profile_name": "Adottante esperto per cane grande",
+        "applicant_age": "31-60",
+        "children": false,
+        "dog_experience": "high",
+        "housing": "house",
+        "garden": true,
+        "preferred_gender": "indifferent",
+        "preferred_age": "adult",
+        "preferred_size": "large",
+        "preferred_fur": "short",
+        "preferred_breeds": ["Rottweiler", "German Shepherd"],
+        "daily_time": ">4",
+        "activity_level": "active",
+        "ideal_dog_description": "We are looking for a loyal, confident and protective dog suitable for an experienced adopter with enough space and time."
+        }, 
+
+        "apartment_small_calm_dog": {
+            "profile_name": "Famiglia in appartamento per cane tranquillo",
+            "applicant_age": "31-60",
+            "children": true,
+            "dog_experience": "none",
+            "housing": "apartment",
+            "garden": false,
+            "preferred_gender": "indifferent",
+            "preferred_age": "adult",
+            "preferred_size": "small",
+            "preferred_fur": "short",
+            "preferred_breeds": ["French Bulldog", "Chihuahua"],
+            "daily_time": "1-2",
+            "activity_level": "calm",
+            "ideal_dog_description": "We are looking for a calm, affectionate and small dog suitable for apartment life and a family with children."
+            },
+
+"open_family_no_breed_preference": {
+  "profile_name": "Famiglia aperta senza preferenza di razza",
+  "applicant_age": "31-60",
+  "children": true,
+  "dog_experience": "some",
+  "housing": "house",
+  "garden": true,
+  "preferred_gender": "indifferent",
+  "preferred_age": "indifferent",
+  "preferred_size": "medium",
+  "preferred_fur": "indifferent",
+  "preferred_breeds": [],
+  "daily_time": "2-4",
+  "activity_level": "moderate",
+  "ideal_dog_description": "We are looking for a friendly, affectionate and sociable dog suitable for a family with children. We are open to different breeds, but we would like a dog that is gentle, playful and comfortable in a family environment."
 }
+
+
+}
+
