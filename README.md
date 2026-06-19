@@ -1,27 +1,30 @@
 # Sistema Intelligente di Supporto all'Adozione dei Cani
 
-Progetto sviluppato per il corso di **Intelligenza Artificiale (81940)**.
+Progetto sviluppato per il corso di **Intelligenza Artificiale**.
 
-L'obiettivo del progetto è realizzare un sistema basato su tecniche di Intelligenza Artificiale in grado di supportare il processo di adozione dei cani. Il sistema combina modelli di Machine Learning, Natural Language Processing e un modulo di matching cane–famiglia per suggerire gli animali più compatibili con le preferenze degli adottanti.
+Il sistema utilizza dati strutturati, descrizioni testuali e immagini per supportare il processo di adozione dei cani e suggerire gli animali più compatibili con uno specifico profilo adottante.
 
 ---
 
 ## Dataset
 
-Il progetto utilizza il dataset **PetFinder Adoption Prediction**, contenente informazioni relative a migliaia di animali domestici.
+Dataset utilizzato:
 
-L'analisi è stata limitata ai soli cani, ottenendo:
+* PetFinder Adoption Prediction
 
-- 8132 cani
-- 24 variabili originali
-- caratteristiche strutturate (età, sesso, taglia, salute, vaccinazioni, foto, ecc.)
-- descrizioni testuali degli annunci di adozione
+Dati utilizzati:
+
+* informazioni strutturate sui cani;
+* descrizioni testuali degli annunci;
+* immagini associate agli animali.
+
+Analisi limitata ai soli cani.
 
 ---
 
 ## Struttura del Progetto
 
-```
+```text
 .
 ├── data
 │   ├── raw
@@ -34,12 +37,13 @@ L'analisi è stata limitata ai soli cani, ottenendo:
 │   ├── 03_bert_model.ipynb
 │   ├── 04_matching_system.ipynb
 │   ├── 05_matching_experiments.ipynb
-│   └── 06_export_rankings.ipynb
+│   ├── 06_export_rankings.ipynb
+│   ├── 07_visual_breed_prediction.ipynb
+│   ├── 08_visual_breed_prediction_all_photos.ipynb
+│   ├── 09_matching_with_visual_breeds.ipynb
+│   └── 10_case_studies_final.ipynb
 │
 ├── docs
-│   ├── project_description.md
-│   ├── modulo_famiglia.pdf
-│   └── matching_system.pdf
 │
 └── README.md
 ```
@@ -48,98 +52,18 @@ L'analisi è stata limitata ai soli cani, ottenendo:
 
 ## Notebook
 
-### 01 - Exploratory Data Analysis
-
-- selezione dei soli cani
-- analisi esplorativa dei dati
-- gestione dei valori mancanti
-- feature engineering
-
-Nuove feature create:
-
-- age_group
-- description_len
-- has_description
-- gender_label
-- fur_length_label
-- maturity_size_label
-
----
-
-### 02 - Baseline Model
-
-Implementazione di modelli Random Forest basati sulle caratteristiche strutturate del dataset.
-
-Risultato migliore:
-
-**Accuracy ≈ 40.93%**
-
-Analisi delle feature importance:
-
-- lunghezza della descrizione
-- età del cane
-- numero di fotografie
-
-risultano le variabili più influenti.
-
----
-
-### 03 - BERT Model
-
-Analisi delle descrizioni testuali tramite:
-
-**BERT (bert-base-uncased)**
-
-Le descrizioni vengono convertite in embedding numerici da 768 dimensioni e utilizzate per addestrare un classificatore.
-
-Risultato:
-
-**Accuracy ≈ 33.07%**
-
----
-
-### 04 - Matching System
-
-Prototipo di sistema di raccomandazione cane–famiglia.
-
-Il sistema utilizza:
-
-- preferenze della famiglia
-- caratteristiche strutturate del cane
-- descrizioni testuali
-- similarità semantica tramite BERT
-
-Output:
-
-- score di compatibilità
-- ranking dei cani consigliati
-- spiegazioni automatiche delle raccomandazioni
-
----
-
-### 05 - Matching Experiments
-
-Permette di confrontare differenti profili famiglia.
-
-Profili disponibili:
-
-- famiglia con bambini in appartamento
-- persona singola attiva
-- richiedente over 60
-- famiglia esperta in campagna
-- prima adozione senza esperienza
-
----
-
-### 06 - Export Rankings
-
-Genera file CSV contenenti il ranking completo dei cani per uno specifico profilo famiglia.
-
-Per ogni cane vengono salvati:
-
-- structured_score
-- bert_similarity
-- final_score
+| Notebook | Contenuto                                               |
+| -------- | ------------------------------------------------------- |
+| 01       | Analisi esplorativa dei dati e feature engineering      |
+| 02       | Modello Random Forest basato sui dati strutturati       |
+| 03       | Analisi delle descrizioni tramite BERT                  |
+| 04       | Primo sistema di matching cane–famiglia                 |
+| 05       | Esperimenti con diversi profili adottante               |
+| 06       | Esportazione dei ranking in CSV                         |
+| 07       | Predizione delle razze a partire dalle immagini         |
+| 08       | Aggregazione delle predizioni su tutte le foto del cane |
+| 09       | Integrazione delle razze stimate nel matching           |
+| 10       | Casi studio finali e dimostrazione del sistema          |
 
 ---
 
@@ -147,60 +71,24 @@ Per ogni cane vengono salvati:
 
 Il sistema combina:
 
-### Compatibilità strutturata
+* compatibilità strutturata;
+* compatibilità di razza;
+* compatibilità semantica tramite BERT.
 
-Basata su:
-
-- età
-- sesso
-- taglia
-- lunghezza del pelo
-- esperienza con i cani
-- presenza di bambini
-- disponibilità di un giardino
-- tempo disponibile
-
-### Compatibilità semantica
-
-Basata sulla similarità tra:
-
-- descrizione del cane ideale inserita dalla famiglia
-- descrizione dell'annuncio di adozione
-
-calcolata tramite BERT.
-
-### Score Finale
-
-```
-final_score =
-0.7 × structured_score +
-0.3 × bert_similarity
-```
-
----
-
-## Risultati Principali
-
-| Modello | Accuracy |
-|----------|----------|
-| Random Forest | 40.93% |
-| BERT | 33.07% |
-
-Il modello Random Forest ha ottenuto le migliori prestazioni nella previsione della velocità di adozione.
-
-BERT è stato utilizzato principalmente per il sistema di matching e per l'analisi semantica delle descrizioni.
+L'output è una classifica personalizzata dei cani più compatibili con il profilo dell'adottante.
 
 ---
 
 ## Tecnologie Utilizzate
 
-- Python
-- Pandas
-- NumPy
-- Scikit-Learn
-- Transformers (Hugging Face)
-- PyTorch
-- Jupyter Notebook
+* Python
+* Pandas
+* NumPy
+* Scikit-Learn
+* PyTorch
+* Transformers
+* TorchVision
+* Jupyter Notebook
 
 ---
 
