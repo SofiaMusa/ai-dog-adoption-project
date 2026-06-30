@@ -1,0 +1,10 @@
+profile_id,profile_name,preferred_breeds,winner_name,winner_petid,breed1_label,breed2_label,visual_breed_1,visual_breed_1_score,breed_score,structured_score,bert_similarity,final_score
+open_family_no_breed_preference,Famiglia aperta senza preferenza di razza,,O-reo,e3a5332ce,Mixed Breed,Collie,flat-coated retriever,0.1436205208301544,1.0,1.0,0.9440063,0.9832019031047821
+family_children_apartment,Famiglia con bambini in appartamento,"Labrador Retriever, Golden Retriever",Bobby,01c6d3224,Golden Retriever,,,0.0,1.0,1.0,0.88481355,0.9654440701007843
+single_active_person,Persona singola attiva con giardino,Rottweiler,Tony,39afc4a19,Rottweiler,,,0.0,1.0,1.0,0.9040563,0.9712168991565704
+senior_applicant,Richiedente over 60,,Sara,8a6d97169,Poodle,Mixed Breed,,0.0,1.0,0.9818181818181819,0.9413841,0.9696879682757638
+experienced_countryside_family,Famiglia esperta in casa di campagna,,Cookie,03a694927,Mixed Breed,,German shepherd,0.0724427253007888,1.0,1.0,0.9560919,0.9868275642395019
+first_time_adopter,Prima adozione senza esperienza,"Beagle, Cocker Spaniel",D21(090916) Beagle,20fc75f2c,Beagle,,,0.0,1.0,0.9800000000000001,0.87731665,0.9491950080394745
+active_family_medium_dog,Famiglia attiva con giardino,"Border Collie, Siberian Husky",Elsie,9aee8fe5a,Border Collie,Mixed Breed,,0.0,1.0,1.0,0.91225183,0.9736755609512329
+experienced_large_dog_owner,Adottante esperto per cane grande,"Rottweiler, German Shepherd",Apple & Micky: 2 Female Rottweilers,0d4b69793,Rottweiler,,,0.0,1.0,1.0,0.92888916,0.9786667644977569
+apartment_small_calm_dog,Famiglia in appartamento per cane tranquillo,"French Bulldog, Chihuahua",Ginger,24abd7725,French Bulldog,,,0.0,1.0,0.9363636363636364,0.91671085,0.9304678134484724

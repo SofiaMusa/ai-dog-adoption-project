@@ -144,6 +144,23 @@
   "daily_time": "2-4",
   "activity_level": "moderate",
   "ideal_dog_description": "We are looking for a friendly, affectionate and sociable dog suitable for a family with children. We are open to different breeds, but we would like a dog that is gentle, playful and comfortable in a family environment."
+},
+
+"elderly_wants_puppy": {
+  "profile_name": "Persona anziana che vorrebbe un cucciolo",
+  "applicant_age": "over_60",
+  "children": false,
+  "dog_experience": "none",
+  "housing": "apartment",
+  "garden": false,
+  "preferred_gender": "indifferent",
+  "preferred_age": "puppy",
+  "preferred_size": "small",
+  "preferred_fur": "indifferent",
+  "preferred_breeds": [],
+  "daily_time": "1-2",
+  "activity_level": "calm",
+  "ideal_dog_description": "I would like a very young puppy, affectionate, calm, suitable for apartment living and easy to manage."
 }
 
 
